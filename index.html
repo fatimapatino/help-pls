@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <title>Ex Libris 2</title>
+  </head>
+  
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    @font-face {
+      font-family: "Roboto Mono";
+      src: url("RobotoMono.ttf");
+    }
+
+    .nav-wrapper {
+      display: flex;
+      justify-content: space-between;
+      padding: 38px;
+      font-family: "Roboto Mono", serif;
+    }
+
+    .left-side {
+      display: flex;
+    }
+
+    .nav-wrapper>.left-side>div {
+      margin-right: 20px;
+      font-size: 20px;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+
+    .nav-wrapper>.right-side>div {
+      font-size: 20px;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+
+    .nav-link-wrapper {
+      height: 22px;
+      border-bottom: 3px solid tansparent;
+      transition: border-bottom 0.5s;
+    }
+
+    .nav-link-wrapper a {
+      color: #8a8a8a;
+      text-decoration: none;
+      transition: color 0.5s;
+    }
+
+    .nav-link-wrapper:hover {
+      border-bottom: 3px solid black;
+    }
+
+    .nav-link-wrapper a:hover {
+      color: black;
+    }
+
+    .grid-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-auto-rows: minmax(200px, 200px);
+    }
+
+    .grid-container-wrapper {
+      position: relative;
+    }
+
+    .grid-item-e {
+      background-color: #e05956;
+      opacity: 1;
+      color: white;
+      font-size: 200px;
+      font-weight: 600;
+      text-align: center;
+      line-height: 160px;
+      transition: 0.25s;
+    }
+
+    .grid-item-e:hover {
+      background-image: url(photo.jpeg);
+      background-size: cover;
+      background-repeat: no-repeat;
+      opacity: 0.75;
+      /*       object-fit: cover; */
+    }
+
+    .grid-item-x {
+      background-color: #505d6c;
+      color: white;
+      font-size: 200px;
+      font-weight: 600;
+      text-align: center;
+      line-height: 160px;
+      transition: 0.25s;
+    }
+
+    .grid-item-x:hover {
+      background-image: url(plant-coffee.jpg);
+      background-size: cover;
+      background-repeat: no-repeat;
+      object-fit: cover;
+      object-position: top;
+      opacity: 0.5;
+    }
+
+    .grid-item-p {
+      background-color: #2e2e2e;
+      font-size: 200px;
+      font-weight: 600;
+      text-align: center;
+      line-height: 160px;
+      transition: 0.5s;
+    }
+
+    .grid-item-p:hover {
+      background-image: url(color-mugs.jpg);
+      background-size: 100%;
+      background-repeat: no-repeat;
+      object-fit: cover;
+      opacity: 0.5;
+    }
+
+    .grid-item-l {
+      background-color: #427193;
+      color: white;
+      font-size: 200px;
+      font-weight: 600;
+      text-align: center;
+      line-height: 160px;
+      transition: 0.5s;
+    }
+
+    .grid-item-l:hover {
+      background-image: url(dark-coffee.jpg);
+      background-size: 100%;
+      background-repeat: no-repeat;
+      object-fit: cover;
+      opacity: 0.5;
+    }
+
+    .grid-item-i {
+      background-color: #e8cd59;
+      color: white;
+      font-size: 200px;
+      font-weight: 600;
+      text-align: center;
+      line-height: 160px;
+      transition: 0.5s;
+    }
+
+    .grid-item-i:hover {
+      background-image: url(ex-lib-cafe.jpeg);
+      background-size: cover;
+      background-repeat: no-repeat;
+      object-fit: cover;
+      opacity: 0.5;
+    }
+
+    .grid-item-b {
+      background-color: #68a78e;
+      color: white;
+      font-size: 200px;
+      font-weight: 600;
+      text-align: center;
+      line-height: 160px;
+      transition: 0.5s;
+    }
+
+    .grid-item-b:hover {
+      background-image: url(fall-reg.webp);
+      background-size: cover;
+      background-repeat: no-repeat;
+      object-fit: cover;
+      opacity: 0.5;
+    }
+
+    .grid-item-r {
+      background-color: #68a78e;
+      color: white;
+      font-size: 200px;
+      font-weight: 600;
+      text-align: center;
+      line-height: 160px;
+      transition: 0.5s;
+    }
+
+    .grid-item-r:hover {
+      background-image: url(reg-entrance.webp);
+      background-size: 100%;
+      background-repeat: no-repeat;
+      object-fit: cover;
+      object-position: bottom;
+      opacity: 0.5;
+    }
+
+    .grid-item-ii {
+      background-color: #427193;
+      color: white;
+      font-size: 200px;
+      font-weight: 600;
+      text-align: center;
+      line-height: 160px;
+      transition: 0.5s;
+    }
+
+    .grid-item-ii:hover {
+      background-image: url(white-mug.jpg);
+      background-size: cover;
+      background-repeat: no-repeat;
+      object-fit: cover;
+      opacity: 0.5;
+    }
+
+    .grid-item-s {
+      background-color: #e05956;
+      color: white;
+      font-size: 200px;
+      font-weight: 600;
+      text-align: center;
+      line-height: 160px;
+      transition: 0.5s;
+    }
+
+    .grid-item-s:hover {
+      background-image: url(white-table.jpg);
+      background-size: 100%;
+      background-repeat: no-repeat;
+      object-fit: cover;
+      opacity: 0.5;
+    }
+
+    .what {
+      background-image: url(reg-map.png);
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-repeat: no-repeat;
+      height: 400px;
+      font-family: "Roboto Mono", serif;
+      padding: 70px 0;
+      text-align: center;
+    }
+
+    .what h1 {
+      display: inline;
+      padding: 10px;
+      font-size: 60px;
+      font-weight: bold;
+      text-shadow: 1px 1px 2px grey;
+      background: white;
+    }
+
+    .what p {
+      font-size: 20px;
+      margin: 30px 0;
+      text-shadow: 2px 2px 4px grey;
+      width: 80%;
+      
+    }
+
+    #scroll-container {
+      height: 90px;
+      background: white;
+      overflow: visible;
+    }
+
+    #scroll-text {
+      transform: translateX(100%);
+      animation: animation 20s linear infinite;
+      color: black;
+      font-family: "Roboto Mono", serif;
+      font-weight: bold;
+      font-size: 50px;
+      padding-top: 10px;
+    }
+
+    @keyframes animation {
+      from {transform: translateX(100%);
+      }
+      to {transform: translateX(-100%);
+      }
+    }
+
+    .featured-drinks {
+      width: 100%;
+      overflow: hidden;
+      margin: 10px auto;
+      background: white;
+    }
+
+    .photobanner {
+      position: relative;
+      height: 400px;
+      background: white;
+    }
+    
+    .pb1, .pb2, {
+      position: absolute;
+      display: flex;
+      padding-top: 50px;
+    }
+    .pb1 {
+      animation-name: bannermove; 
+      animation-duration: 25s; 
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+    }
+    .pb2 {
+/*       display: none; */
+    	left: 100%;
+      animation-name: bannermove2; 
+      animation-duration: 25s; 
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+      animation-delay: 13s
+    }
+
+   @keyframes bannermove {
+     	0% {left: 100%;}
+    	80% {left: calc(0% - 1446px);}
+    	100% {left: calc(0% - 1446px);}
+}
+     @keyframes bannermove2 {
+    	 0% {left: 100%;}
+       80% {left: calc(0% - 1446px);}
+       100% {left: calc(0% - 1446px);}
+       
+/*        0% {left: 100%;}
+    	50% {left: calc(0% - 1445px);}
+    	100% {left: calc(0% - 1445px);} */
+}
+  
+
+    .photobanner img {
+      transition: all 1s ease;
+      height: 300px;
+    }
+
+    .photobanner img:hover {
+      transform: scale(1.1);
+      cursor: pointer;
+      box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    .social-media {
+      position: relative;
+     	background-image: url(coffee-gif.gif);
+      background-repeat: no-repeat;
+      height: 400px;
+      width: 100%;
+      background-size: cover;
+    }
+    
+    .social-media h1 {
+      color: white;
+      font-family: "Roboto Mono", serif;
+      font-weight: bold;
+      text-align: center;
+      padding-top: 40px;
+      font-size: 30px;
+    }
+    #smile {
+      height: 150px;
+      transform: rotate(-20deg) translate(50px, 30px);
+    }
+  </style>
+  
+  <body>
+    <div class="container">
+      <div class="nav-wrapper">
+        <div class="left-side">
+          <div class="nav-link-wrapper">
+            <a href="">Home</a>
+          </div>
+          <div class="nav-link-wrapper">
+            <a href="https://www.lib.uchicago.edu/spaces/ex-libris-cafe/" target="_blank">About</a>
+          </div>
+        </div>
+        <div class="right-side">
+          <div class="brand">
+            <div>EX LIBRIS</div>
+          </div>
+        </div>
+      </div>
+
+      <section>
+        <div class="grid-container">
+          <div class="grid-item-e">e
+            <div class="layer-e"></div>
+          </div>
+          <div class="grid-item-x">x</div>
+          <div class="grid-item-p">!</div>
+          <div class="grid-item-l">l</div>
+          <div class="grid-item-i">i</div>
+          <div class="grid-item-b">b</div>
+          <div class="grid-item-r">r</div>
+          <div class="grid-item-ii">i</div>
+          <div class="grid-item-s">s</div>
+        </div>
+      </section>
+
+      <section class="what">
+          <h1>Who are we?</h1>
+          <p>Ex Libris is the highest grossing student run cafe at UChicago. We are located on the first floor of the Regenstein Library. Come in to fuel up, for a study break, or just to hang out!</p>
+          <img id="smile" src="clear-mug-gif.gif" alt="smiling coffee mug">
+      </section>
+      <div id="scroll-container">
+        <div id="scroll-text">WE HAVE FEAUTRED DRINKS</div>
+      </div>
+
+      <section class="featured-drinks">
+        <div class="photobanner">
+					<div class="pb1"> 
+            <img class="first" src="ppc.jpg" alt="ppc">
+            <img src="great-fire.jpg" alt="great fire">
+            <img src="brain-fog.jpg" alt="brain fog">
+            <img src="bpond.jpg" alt="bpond">
+            <img src="econ.jpg" alt="econ bro">
+            <img src="maroon.jpg" alt="maroon mocha">
+          </div>
+          <div class="pb2"> 
+            <img class="first" src="ppc.jpg" alt="ppc">
+            <img src="great-fire.jpg" alt="great fire">
+            <img src="brain-fog.jpg" alt="brain fog">
+            <img src="bpond.jpg" alt="bpond">
+            <img src="econ.jpg" alt="econ bro">
+            <img src="maroon.jpg" alt="maroon mocha">
+          </div>
+         
+         
+        </div>
+      </section>
+      <section class="social-media">
+				<h1>
+          Follow us on Instagram!
+        </h1>
+      </section>
+
+    </div>
+  </body>
+
+</html>
